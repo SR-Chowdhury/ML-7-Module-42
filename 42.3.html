@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="alertFun()">Alert</button> <br><br>
+    <button onclick="confirmFun()">Confirm</button> <br><br>
+    <button onclick="promptFun()">Prompt</button>
+
+    <script>
+        // alert()
+        const alertFun = () => {
+            alert('Hi you have to click ok.... either you cant do anything with this document');
+            // Always return true
+        }
+
+        // confirm()
+        const confirmFun = () => {
+            const result = confirm('Do you love me?');
+            // Return either true / false
+            if (!!result) {
+                alert('Thanks my love');
+            } else {
+                alert('I hate you');
+            }
+        }
+
+        // prompt()
+        const promptFun = () => {
+            const result = prompt('What is your name my love?');
+            // Return either null or input.value
+            if(result) {
+                alert(result +', really I love you!');
+            } else {
+                alert('I dont care if you dont say your name');
+            }
+        }
+    </script>
+</body>
+</html>
