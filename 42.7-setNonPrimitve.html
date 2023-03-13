@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42.7</title>
+</head>
+
+<body>
+    <button onclick="func1()">Set Primitive Value to Local Storage</button> <br><br>
+    <button onclick="func2()">Set Non-Primitive (object) Value to Local Storage</button> <br><br>
+
+    <div>
+        <button onclick="func3()">Get Primitive Value from Local Storage</button> <br><br>
+        <button onclick="func4()">Get Non-Primitive Value from Local Storage</button> <br>
+        <code>N>B> see console</code>
+    </div>
+
+    <!-- 
+        To set & read non-primite value into local storage first we need to trasform obj / array to string using JSON.stringify()
+        Example: 
+        localStorage.setItem('name', 'tanjima')
+        localStorage.getItem('name') => 'tanjima'
+
+        const obj = {name: 'shihan', age: 30}
+        const objString = JSON.stringify(obj)
+        localStorage.setItem('obj', objString)
+
+        localStorage.getItem('obj')
+        '{"name":"shihan","age":30}'
+
+        JSON.parse(localStorage.getItem('obj'))
+        {name: 'shihan', age: 30}
+        typeof JSON.parse(localStorage.getItem('obj'))
+        'object'
+     -->
+
+    <script>
+        const func1 = () => {
+            localStorage.setItem('name', 'tanjima');
+        }
+
+        const func2 = () => {
+            const obj = { name: 'shihan', age: 30 }
+            const objString = JSON.stringify(obj);
+            localStorage.setItem('obj', objString)
+        }
+
+        const func3 = () => {
+            console.log(localStorage.getItem('name'));
+        }
+
+        const func4 = () => {
+            console.log(JSON.parse(localStorage.getItem('obj')));
+        }
+
+
+    </script>
+</body>
+
+</html>
