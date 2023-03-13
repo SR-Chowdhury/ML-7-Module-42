@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+</head>
+
+<body>
+    <h1>To get cookie</h1>
+
+
+    <script>
+        // Use this code into browser console to any website
+        document.cookie.split('; ').map(c => {
+            const element = c.split('='); 
+            console.log('Key = ' + element[0], '; Value = ' + element[1]);
+        })
+    </script>
+</body>
+
+</html>
